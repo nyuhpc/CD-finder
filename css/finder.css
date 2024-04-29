@@ -2,8 +2,8 @@
     font-size: 14px;
 }
 
-.content-header.clearfix {
-    display: none;
+header {
+    display: none !important;
 }
 
 .btn-primary {
