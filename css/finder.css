@@ -309,7 +309,7 @@ h2.sub-heading.heading-services {
       left: -9999px; }
       #modularstorage-services .service-panel input ~ .control-indicator {
         margin: 0;
-        background-color: #57068c; /* NYU Violet */
+        background-color: ##eee6f3;
         border: 2px #57068c solid;
         border-radius: 0.25em;
         height: 100%;
@@ -325,7 +325,7 @@ h2.sub-heading.heading-services {
           content: "\f10c";
           font-family: "FontAwesome";
           display: block;
-          color: #4a568b;
+          color: #404040;
           font-weight: normal;
           margin-left: 0.25em;
           position: absolute;
