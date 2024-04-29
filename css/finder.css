@@ -2,6 +2,10 @@
     font-size: 14px;
 }
 
+.content-header {
+    display: none;
+}
+
 .btn-primary {
   background-color: white;
   border-radius: 2px;
