@@ -2,7 +2,7 @@
     font-size: 14px;
 }
 
-.content-header {
+.content-header.clearfix {
     display: none;
 }
 
