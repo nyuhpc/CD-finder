@@ -13,19 +13,20 @@
     border-color: #099fc9;
     color: white; }
 
+
 .btn-secondary {
   background-color: white;
   border-radius: 2px;
-  border: 2px solid #a7804d;
+  border: 2px solid #57068c;
   padding: 7px 30px;
-  color: #84653d; }
+  color: #57068c; }
   .btn-secondary:hover, .btn-secondary:focus {
-    background-color: #ebe1d5;
-    border-color: #84653d;
-    color: #614a2d; }
+    background-color: #eee6f3;
+    border-color: #57068c;
+    color: #702b9d; }
   .btn-secondary:active, .btn-secondary:active:hover, .btn-secondary:active:focus {
-    background-color: #84653d;
-    border-color: #84653d;
+    background-color: #702b9d;
+    border-color: #57068c;
     color: white; }
 
 * {
@@ -214,7 +215,7 @@ h2.sub-heading.heading-services {
   font-size: 1em;
   padding-left: 2em; }
   #questionlist li {
-    color: #84653d;
+    color: #000000;
     font-weight: bold;
     font-size: 1.4em;
     margin-bottom: 1em;
