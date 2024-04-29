@@ -287,7 +287,7 @@ h2.sub-heading.heading-services {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0.25em;
-    width: calc(20% - 0.5em);
+    width: calc(25% - 0.5em);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
@@ -309,8 +309,8 @@ h2.sub-heading.heading-services {
       left: -9999px; }
       #modularstorage-services .service-panel input ~ .control-indicator {
         margin: 0;
-        background-color: #e4e6f0;
-        border: 2px #a1a9cd solid;
+        background-color: #57068c; /* NYU Violet */
+        border: 2px #57068c solid;
         border-radius: 0.25em;
         height: 100%;
         width: 100%;
@@ -332,12 +332,12 @@ h2.sub-heading.heading-services {
           top: 10px;
           right: 10px; }
       #modularstorage-services .service-panel input:checked ~ .control-indicator {
-        background-color: #a1a9cd; }
+        background-color: #57068c; }
         #modularstorage-services .service-panel input:checked ~ .control-indicator::before {
           content: "\f058";
-          color: #262d49; }
+          color: #ffffff; }
       #modularstorage-services .service-panel input:checked ~ h4, #modularstorage-services .service-panel input:checked ~ p {
-        color: #2f3759;
+        color: #ffffff;
         position: relative; }
     @media screen and (max-width: 1440px) {
       #modularstorage-services .service-panel {
@@ -349,7 +349,7 @@ h2.sub-heading.heading-services {
       #modularstorage-services .service-panel {
         width: calc(50% - 0.5em); } }
     #modularstorage-services .service-panel h4, #modularstorage-services .service-panel p {
-      color: #414b7b;
+      color: #404040;
       margin: 0; }
     #modularstorage-services .service-panel h4 {
       font-size: 18px; }
