@@ -1,18 +1,21 @@
+.step-1 { /* The describe your data text */
+    font-size: 14px;
+}
+
 .btn-primary {
   background-color: white;
   border-radius: 2px;
-  border: 2px solid #11c3f4;
+  border: 2px solid #57068c;
   padding: 7px 30px;
-  color: #099fc9; }
+  color: #57068c; }
   .btn-primary:hover, .btn-primary:focus {
-    background-color: #d4f4fd;
-    border-color: #099fc9;
-    color: #077898; }
+    background-color: #eee6f3;
+    border-color: #57068c;
+    color: #702b9d; }
   .btn-primary:active, .btn-primary:active:hover, .btn-primary:active:focus {
-    background-color: #099fc9;
-    border-color: #099fc9;
+    background-color: #702b9d;
+    border-color: #57068c;
     color: white; }
-
 
 .btn-secondary {
   background-color: white;
