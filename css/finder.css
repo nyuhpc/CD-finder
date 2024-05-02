@@ -111,7 +111,7 @@ footer a {
 
 #comparisonchart thead th, #comparisonchart thead td, .floating-col-header > div {
   white-space: nowrap;
-  background-color: #78879d; }
+  background-color: #57068c; }
 
 .cwd-scrolling-table .floating-row-header {
   background-color: whitesmoke; }
@@ -295,7 +295,7 @@ h2.sub-heading.heading-services {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0.25em;
-    width: calc(25% - 0.5em);
+    width: calc(33% - 0.5em);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
@@ -391,7 +391,7 @@ h2.sub-heading.heading-services {
       margin-left: 0.25em; }
     .comparisonlist-wrapper input:checked + .control-indicator::before {
       content: "\f058";
-      color: #5e6caa; }
+      color: #57068c; }
   .comparisonlist-wrapper label {
     display: -webkit-box;
     display: -ms-flexbox;
