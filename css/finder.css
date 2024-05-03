@@ -111,7 +111,8 @@ footer a {
 
 #comparisonchart thead th, #comparisonchart thead td, .floating-col-header > div {
   white-space: nowrap;
-  background-color: #57068c; }
+  background-color: #57068c; 
+  color: #ffffff; } 
 
 .cwd-scrolling-table .floating-row-header {
   background-color: whitesmoke; }
