@@ -6,6 +6,10 @@ RUN apt-get update && apt-get install git rsync -y && \
     composer require 'drupal/paragraphs:^1.17'&& \
 	composer require 'drush/drush'
 
+# Install sqlite3 which is required to export the sqlite db. 
+# Recommended to use `drush ard --exclude-code-paths=web/sites/default/settings.php`
+RUN apt-get install sqlite3
+
 RUN drush si --yes \
 	standard \
 	--db-url=sqlite://sites/default/files/.ht.sqlite \
