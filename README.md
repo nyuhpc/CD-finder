@@ -1,5 +1,5 @@
 # Finder Module
-
+  
 CREATED BY: CORNELL DATA MANAGEMENT SERVICE GROUP AND CORNELL INFORMATION TECHNOLOGIES CUSTOM DEVELOPMENT GROUP
 
 This software is being shared free of cost and with no restrictions on re-use or modification. The code is provided “as is” without warranty of any kind, express or implied, and Cornell University takes no responsibility for maintenance or upgrades.
