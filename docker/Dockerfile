@@ -1,5 +1,5 @@
 FROM drupal:10.2.6-php8.3-apache-bullseye
-
+#
 # Data finder steps
 RUN apt-get update && apt-get install git rsync -y && \
     git clone https://github.com/nyuhpc/CD-finder.git /opt/drupal/web/modules/cd-finder && \
