@@ -4,7 +4,7 @@ FROM drupal:10.2.5-php8.3-apache-bullseye
 RUN apt-get update && apt-get install git rsync -y && \
     git clone https://github.com/nyuhpc/CD-finder.git /opt/drupal/web/modules/cd-finder && \
     composer require 'drupal/paragraphs:^1.17'&& \
-	composer require 'drush/drush'
+	composer require 'drush/drush:^12.5.2.0'
 
 # Install sqlite3 which is required to export the sqlite db. 
 # Recommended to use `drush ard --exclude-code-paths=web/sites/default/settings.php`
