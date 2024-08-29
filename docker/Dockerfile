@@ -1,4 +1,5 @@
-FROM drupal:10.2.5-php8.3-apache-bullseye
+FROM drupal:10.2.6-php8.3-apache-bullseye
+
 #
 # Data finder steps
 RUN apt-get update && apt-get install git rsync -y && \
