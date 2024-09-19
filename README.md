@@ -55,6 +55,71 @@ Then fill in the text for the Service Paragraphs you have chosen.
 
 Required:  Add an additional Service with the title “Help” and put text in each field describing what to expect in that field. This will be used by the Finder module to display help information for the each row in the comparison table. The comparison table may not appear if the Help Service is not defined.
 
+## Instructions for Adding a Service
+### Step 0: Git clone the project (CD-finder)
+```bash
+git clone https://github.com/nyuhpc/CD-finder.git
+```
+
+### Step 1: Build and Run the container
+1. Navigate to the project directory:
+```bash
+cd CD-finder/docker
+```
+2. Build the Docker/Podman container (without cache):
+```bash
+podman build -t dev --no-cache .
+```
+3. Run the container and expose the necessary ports:
+```bash
+# Replace port(8080), name(dev) to any value if you want
+podman run -d -t --name dev -p 8080:80 localhost/dev
+```
+### Step 2: Access the Container and Drupal
+1. Enter the running container:
+```bash
+podman exec -ti dev bash
+```
+2. Generate a one-time login link for Drupal:
+```bash
+# directed to port 8080
+drush uli --uri=http://localhost:8080
+```
+3. Open the generated link in your browser, register as an admin and log in.
+### Step 3: Modify the Service
+1. Once logged in, navigate to the “Content” tab in the Drupal admin interface.
+2. Add or edit the service as needed.
+3. Confirm that the service appears in the list of available options.
+### Step 4: Export the Database
+1. After making changes, export the database:
+```bash
+# still in contianer
+drush ard --exclude-code-paths=web/sites/default/settings.php
+```
+2. Exit the contianer:
+```bash
+exit
+```
+3. Copy the database archive from the container to local:
+```bash
+podman cp dev:/tmp/archive.tar.gz .
+```
+3. Extract the archive:
+```bash
+mkdir archive && tar -xzvf archive.tar.gz -C archive
+```
+### Step 5: Save and Clean Up
+1. Save essential files:
+```bash
+cp archive/files/.ht.sqlite .
+cp archive/files/.ht.sqlite-shm .
+cp archive/files/.ht.sqlite-wal . 
+```
+2. Remove temporary files:
+```bash
+rm -rf archive && rm archive.tar.gz
+```
+
 ## Tips
 
 * You may wish to remove all sidebar blocks from this page, so that the Finder can use the full width of the page.
@@ -63,3 +128,22 @@ Required:  Add an additional Service with the title “Help” and put text in e
 * Check out our production implementation at https://finder.research.cornell.edu
 * You will need to configure the SMTP module to allow the Finder module to send mail.
 * Installation works only at a root site, not if installed in a subdirectory.
+
+## FAQ
+### Q: I encountered the 'no unqualified-search registries' error when trying to build the container:
+```bash
+# $xxx:~/Documents/CD-finder/docker$ podman build -t dev --no-cache .
+# Error: error creating build container: short-name "drupal:10.2.6-php8.3-apache-bullseye" did not resolve to an alias and no unqualified-search registries are defined in "/etc/containers/registries.conf"
+```
+A: This error occurs because Podman cannot resolve the short name to a fully qualified image name. To resolve this, you need to configure the container registries in the /etc/containers/registries.conf file.
+1. Open the registries.conf file with superuser privileges:
+```bash
+sudo nano /etc/containers/registries.conf
+```
+2. Locate the [registries.search] section and modify it to include the Docker registry:
+```bash
+[registries.search]
+registries = ['docker.io']
+``` 
+3. Save the file and exit.
+4. Retry the build command:
