@@ -87,9 +87,15 @@ drush uli --uri=http://localhost:8080
 ```
 3. Open the generated link in your browser, register as an admin and log in.
 ### Step 3: Modify the Service
-1. Once logged in, navigate to the “Content” tab in the Drupal admin interface.
-2. Add or edit the service as needed.
-3. Confirm that the service appears in the list of available options.
+1. Setup a username and password, if you are logging in for the first time.
+![Setup Account](/images/To-Setup-Account.png)
+2. Once logged in, navigate to the “Content” tab in the Drupal admin interface.
+![Content Tab](/images/To-Find-Content.png)
+3. Add or edit the service as needed.
+![Add or edit the servic](/images/To-Add-Content.png)
+You can add/modify the required information now.
+![Fill the Info](/images/To-Create-Service.png)
+4. Confirm that the service appears in the list of available options.
 ### Step 4: Export the Database
 1. After making changes, export the database:
 ```bash
