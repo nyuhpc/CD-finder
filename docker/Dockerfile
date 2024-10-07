@@ -10,11 +10,11 @@ RUN composer require 'drupal/paragraphs:^1.17' && \
 
 RUN git clone https://github.com/nyuhpc/CD-finder.git /opt/drupal/web/modules/cd-finder
 
-RUN drush si --yes \
+RUN drush site:install --yes \
 	standard \
 	--db-url=sqlite://sites/default/files/.ht.sqlite \
 	--site-name=data-finder && \
-    drush en finder --yes
+    drush pm:install finder --yes
 
 COPY .ht.sqlite /opt/drupal/web/sites/default/files/.ht.sqlite
 
