@@ -16,7 +16,7 @@ RUN drush site:install --yes \
 	--site-name=data-finder && \
     drush pm:install finder --yes
 
-COPY .ht.sqlite /opt/drupal/web/sites/default/files/.ht.sqlite
+COPY docker/.ht.sqlite /opt/drupal/web/sites/default/files/.ht.sqlite
 
 RUN chown -R www-data:www-data web/sites web/modules web/themes
 
