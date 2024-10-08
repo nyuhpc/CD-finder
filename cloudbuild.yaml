@@ -10,7 +10,7 @@ steps:
 
 availableSecrets:
   secretManager:
-  - versionName: "projects/721023221862/secrets/github_key/versions/1"
+  - versionName: projects/721023221862/secrets/github_key/versions/1
     env: 
       - GITHUB_SSH_KEY
   
