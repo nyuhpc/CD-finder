@@ -4,7 +4,7 @@ steps:
     'build',
     '--secret', 'id=github_key,src=/root/.ssh/id_rsa',
     '-t', 'gcr.io/hpc-data-finder-poc-7930/github.com/nyuhpc/cd-finder:latest',
-    '-f', 'Dockerfile',
+    '-f', 'docker/Dockerfile',
     '.'
   ]
 
