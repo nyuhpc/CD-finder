@@ -10,8 +10,8 @@ steps:
 
 availableSecrets:
   secretManager:
-  - versionName: projects/721023221862/secrets/github_key/versions/latest
-
+  - versionName: projects/721023221862/secrets/github_key/versions/1
+  
 images:
 - 'gcr.io/hpc-data-finder-poc-7930/github.com/nyuhpc/cd-finder:latest'
 
