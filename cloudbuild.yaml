@@ -1,0 +1,16 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+    'build',
+    '--secret', 'id=github-key,src=/root/.ssh/id_rsa',
+    '-t', 'gcr.io/hpc-data-finder-poc-7930/github.com/nyuhpc/cd-finder:latest',
+    '-f', 'Dockerfile',
+    '.'
+  ]
+
+availableSecrets:
+  secretManager:
+  - versionName: projects/$(gcloud config get-value project)/secrets/github-key/versions/latest
+
+images:
+- 'gcr.io/hpc-data-finder-poc-7930/github.com/nyuhpc/cd-finder:latest'
