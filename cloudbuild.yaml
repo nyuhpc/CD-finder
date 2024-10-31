@@ -2,19 +2,11 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [
     'build',
-    '--secret', 'id=github_key,src=/root/secret',
     '-t', 'gcr.io/hpc-data-finder-poc-7930/github.com/nyuhpc/cd-finder:latest',
     '-f', 'docker/Dockerfile',
     '.'
   ]
-  secretEnv: ['GITHUB_SSH_KEY']
-
-availableSecrets:
-  secretManager:
-  - versionName: projects/721023221862/secrets/github_key/versions/1
-    env: 
-      - GITHUB_SSH_KEY
-  
+ 
 images:
 - 'gcr.io/hpc-data-finder-poc-7930/github.com/nyuhpc/cd-finder:latest'
 
