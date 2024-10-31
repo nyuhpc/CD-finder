@@ -7,6 +7,7 @@ steps:
     '-f', 'docker/Dockerfile',
     '.'
   ]
+  secretEnv: ['GITHUB_SSH_KEY']
 
 availableSecrets:
   secretManager:
@@ -19,4 +20,3 @@ images:
 
 options:
   logging: NONE
-
