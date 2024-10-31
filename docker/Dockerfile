@@ -23,5 +23,5 @@ RUN chown -R www-data:www-data web/sites web/modules web/themes
 RUN drush cache:rebuild
 
 RUN mkdir -p /root/.ssh && \
-    echo "$GITHUB_KEY" > /root/.ssh/id_rsa && \
+    echo "$KEY" > /root/.ssh/id_rsa && \
     chmod 600 /root/.ssh/id_rsa
