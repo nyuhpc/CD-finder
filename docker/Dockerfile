@@ -21,13 +21,3 @@ COPY docker/.ht.sqlite /opt/drupal/web/sites/default/files/.ht.sqlite
 RUN chown -R www-data:www-data web/sites web/modules web/themes
 
 RUN drush cache:rebuild
-
-# Ensure the directory exists
-RUN mkdir -p /root/.ssh/
-
-# Use --mount=type=secret to mount the secret during the build process
-RUN --mount=type=secret,id=github_key \
-    cp /run/secrets/github_key /root/.ssh/id_rsa && \
-    chmod 600 /root/.ssh/id_rsa
-
-
