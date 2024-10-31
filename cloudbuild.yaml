@@ -2,7 +2,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [
     'build',
-    '--secret', 'id=github_key,src=/root/.ssh/id_rsa',
+    '--secret', 'id=github_key,src=/root/secret',
     '-t', 'gcr.io/hpc-data-finder-poc-7930/github.com/nyuhpc/cd-finder:latest',
     '-f', 'docker/Dockerfile',
     '.'
