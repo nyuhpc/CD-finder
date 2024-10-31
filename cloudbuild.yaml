@@ -4,9 +4,16 @@ steps:
     'build',
     '-t', 'gcr.io/hpc-data-finder-poc-7930/github.com/nyuhpc/cd-finder:latest',
     '-f', 'docker/Dockerfile',
+    '--build-arg', 'KEY=$$GITHUB_KEY'
     '.'
   ]
- 
+  secretEnv: ['GITHUB_KEY']
+
+availableSecrets:
+  secretManager:
+  - versionName: projects/721023221862/secrets/github_key/versions/1
+    env: 'GITHUB_KEY'
+
 images:
 - 'gcr.io/hpc-data-finder-poc-7930/github.com/nyuhpc/cd-finder:latest'
 
