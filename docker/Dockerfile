@@ -21,6 +21,3 @@ COPY docker/.ht.sqlite /opt/drupal/web/sites/default/files/.ht.sqlite
 RUN chown -R www-data:www-data web/sites web/modules web/themes
 
 RUN drush cache:rebuild
-
-RUN mkdir -p /root/.ssh/
-RUN --mount=type=secret,id=github_key cat /root/.ssh/id_rsa
