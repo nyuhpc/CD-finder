@@ -8,7 +8,15 @@ RUN apt-get update && \
 RUN composer require 'drupal/paragraphs:^1.17' && \
     composer require 'drush/drush:^12.5.2.0'
 
-RUN git clone https://github.com/nyuhpc/CD-finder.git /opt/drupal/web/modules/cd-finder
+RUN mkdir -p /root/.ssh && \
+    chmod 700 /root/.ssh && \
+    touch /root/.ssh/id_rsa && \
+    chmod 600 /root/.ssh/id_rsa && \
+    echo "Host github.com\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null" > /root/.ssh/config && \
+    chmod 600 /root/.ssh/config
+
+RUN git clone https://github.com/nyuhpc/CD-finder.git /opt/drupal/web/modules/cd-finder && \
+    git config --global --add safe.directory /opt/drupal/web/modules/cd-finder
 
 RUN drush site:install --yes \
 	standard \
