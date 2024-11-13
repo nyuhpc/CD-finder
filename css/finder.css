@@ -219,6 +219,13 @@ h2.sub-heading.heading-services {
   .email-options label {
     display: inline; }
 
+.checkbox,.radio {
+    position: relative;
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 #questionlist {
   font-size: 1em;
   padding-left: 2em; }
