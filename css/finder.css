@@ -452,6 +452,7 @@ h2.sub-heading.heading-services {
     color: #5a5a5a; }
 
 .cd-row {
+  height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
