@@ -10,7 +10,7 @@ RUN composer require 'drupal/paragraphs:^1.17' && \
 
 RUN mkdir -p /root/.ssh && \
     chmod 700 /root/.ssh && \
-    touch /root/.ssh/id_rsa && \
+    echo "${DEPLOY_KEY}" > /root/.ssh/id_rsa && \
     chmod 600 /root/.ssh/id_rsa && \
     echo "Host github.com\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null" > /root/.ssh/config && \
     chmod 600 /root/.ssh/config
@@ -27,5 +27,6 @@ RUN drush site:install --yes \
 COPY docker/.ht.sqlite /opt/drupal/web/sites/default/files/.ht.sqlite
 
 RUN chown -R www-data:www-data web/sites web/modules web/themes
+
 
 RUN drush cache:rebuild
