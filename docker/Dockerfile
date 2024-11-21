@@ -9,6 +9,9 @@ FROM drupal:10.2.6-php8.3-apache-bullseye
 #     composer require 'drush/drush:^12.5.2.0'
 
 ENV MYKEY=$DEPLOY_KEY
+ENV THEO=$THEO
+ENV SON=$THEO
+ENV ENV1=ENV1
 
 RUN mkdir -p /root/.ssh && \
     chmod 700 /root/.ssh && \
