@@ -17,6 +17,7 @@ RUN mkdir -p /root/.ssh && \
 
 RUN echo "ID_RSA CHECK --> " && ls -l /root/.ssh/id_rsa && cat /root/.ssh/id_rsa
 RUN env
+RUN echo "$DEPLOY_KEY ..  $ERIC .. $ALE .. $THEO"
 
 # RUN git clone https://github.com/nyuhpc/CD-finder.git /opt/drupal/web/modules/cd-finder && \
 #     git config --global --add safe.directory /opt/drupal/web/modules/cd-finder
