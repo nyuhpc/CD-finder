@@ -1,21 +1,22 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: [
-    'build',
-    '-t', 'gcr.io/hpc-data-finder-poc-7930/github.com/nyuhpc/cd-finder:latest',
-    '--build-arg', 'DEPLOY_KEY="$$DEPLOY_KEY"',
-    '-f', 'docker/Dockerfile',
-    '.'
-  ]
-  secretEnv: ['DEPLOY_KEY']
+  - name: 'gcr.io/cloud-builders/docker'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - >
+        docker build -t gcr.io/hpc-data-finder-poc-7930/github.com/nyuhpc/cd-finder:latest 
+        --build-arg DEPLOY_KEY="$$DEPLOY_KEY" 
+        -f docker/Dockerfile 
+        .
+    secretEnv: ['DEPLOY_KEY']
 
 availableSecrets:
   secretManager:
-  - versionName: projects/721023221862/secrets/github_key/versions/1
-    env: 'DEPLOY_KEY'
-    
+    - versionName: projects/721023221862/secrets/github_key/versions/1
+      env: 'DEPLOY_KEY'
+
 images:
-- 'gcr.io/hpc-data-finder-poc-7930/github.com/nyuhpc/cd-finder:latest'
+  - 'gcr.io/hpc-data-finder-poc-7930/github.com/nyuhpc/cd-finder:latest'
 
 options:
   logging: CLOUD_LOGGING_ONLY
