@@ -10,10 +10,12 @@ RUN composer require 'drupal/paragraphs:^1.17' && \
 
 RUN mkdir -p /root/.ssh && \
     chmod 700 /root/.ssh && \
-    echo "${DEPLOY_KEY}" > /root/.ssh/id_rsa && \
-    chmod 600 /root/.ssh/id_rsa && \
     echo "Host github.com\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null" > /root/.ssh/config && \
     chmod 600 /root/.ssh/config
+ 
+RUN --mount=type=secret,id=deploy_key \
+    cat /run/secrets/deploy_key > /root/.ssh/id_rsa && \
+    chmod 600 /root/.ssh/id_rsa
 
 RUN git clone https://github.com/nyuhpc/CD-finder.git /opt/drupal/web/modules/cd-finder && \
     git config --global --add safe.directory /opt/drupal/web/modules/cd-finder
@@ -27,6 +29,5 @@ RUN drush site:install --yes \
 COPY docker/.ht.sqlite /opt/drupal/web/sites/default/files/.ht.sqlite
 
 RUN chown -R www-data:www-data web/sites web/modules web/themes
-
 
 RUN drush cache:rebuild
