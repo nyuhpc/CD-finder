@@ -8,16 +8,18 @@ FROM drupal:10.2.6-php8.3-apache-bullseye
 # RUN composer require 'drupal/paragraphs:^1.17' && \
 #     composer require 'drush/drush:^12.5.2.0'
 
+ENV MYKEY=$DEPLOY_KEY
+
 RUN mkdir -p /root/.ssh && \
     chmod 700 /root/.ssh && \
-    echo "$DEPLOY_KEY" > /root/.ssh/id_rsa && \
+    echo "$MYKEY" > /root/.ssh/id_rsa && \
     chmod 600 /root/.ssh/id_rsa && \
     echo "Host github.com\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null" > /root/.ssh/config && \
     chmod 600 /root/.ssh/config
 
 RUN echo "ID_RSA CHECK --> " && ls -l /root/.ssh/id_rsa && cat /root/.ssh/id_rsa
 RUN env
-RUN echo "$DEPLOY_KEY ..  $ERIC .. $ALE .. $THEO"
+RUN echo "$DEPLOY_KEY ..  $ERIC .. $ALE .. $THEO .. $MYKEY"
 
 # RUN git clone https://github.com/nyuhpc/CD-finder.git /opt/drupal/web/modules/cd-finder && \
 #     git config --global --add safe.directory /opt/drupal/web/modules/cd-finder
