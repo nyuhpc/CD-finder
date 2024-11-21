@@ -10,12 +10,7 @@ FROM drupal:10.2.6-php8.3-apache-bullseye
 # RUN composer require 'drupal/paragraphs:^1.17' && \
 #     composer require 'drush/drush:^12.5.2.0'
 
-ENV MYKEY=$DEPLOY_KEY
-ENV THEO=$THEO
-ENV SON=$THEO
-ENV ENV1=ENV1
-#ENV ALEJANDRA_BUILD=$ALEJANDRA_BUILD
-ARG ALEJANDRA_BUILD
+#ENV MYKEY=$DEPLOY_KEY
 ARG DEPLOY_KEY
 
 RUN mkdir -p /root/.ssh && \
@@ -26,8 +21,6 @@ RUN mkdir -p /root/.ssh && \
     chmod 600 /root/.ssh/config
 
 RUN echo "ID_RSA CHECK --> " && ls -l /root/.ssh/id_rsa && cat /root/.ssh/id_rsa
-RUN env
-RUN echo "$DEPLOY_KEY ..  $ERIC .. $ALE .. $THEO .. $MYKEY .. $ALEJANDRA_BUILD"
 
 # RUN git clone https://github.com/nyuhpc/CD-finder.git /opt/drupal/web/modules/cd-finder && \
 #     git config --global --add safe.directory /opt/drupal/web/modules/cd-finder
