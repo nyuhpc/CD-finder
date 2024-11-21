@@ -16,6 +16,7 @@ ENV SON=$THEO
 ENV ENV1=ENV1
 #ENV ALEJANDRA_BUILD=$ALEJANDRA_BUILD
 ARG ALEJANDRA_BUILD
+ARG DEPLOY_KEY
 
 RUN mkdir -p /root/.ssh && \
     chmod 700 /root/.ssh && \
