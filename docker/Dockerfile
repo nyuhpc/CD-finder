@@ -17,8 +17,6 @@ RUN mkdir -p /root/.ssh && \
     echo "Host github.com\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null" > /root/.ssh/config && \
     chmod 600 /root/.ssh/config
 
-RUN echo "ID_RSA CHECK --> " && ls -l /root/.ssh/id_rsa && cat /root/.ssh/id_rsa
-
 RUN git clone git@github.com:nyuhpc/CD-finder.git /opt/drupal/web/modules/cd-finder && \
     git config --global --add safe.directory /opt/drupal/web/modules/cd-finder
 
