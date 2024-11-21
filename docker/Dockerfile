@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 FROM drupal:10.2.6-php8.3-apache-bullseye
 
 # RUN apt-get update && \
