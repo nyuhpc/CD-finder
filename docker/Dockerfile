@@ -10,11 +10,11 @@ FROM drupal:10.2.6-php8.3-apache-bullseye
 
 
 ARG DEPLOY_KEY
-ENV MYKEY=$DEPLOY_KEY
+#ENV MYKEY=$DEPLOY_KEY
 
 RUN mkdir -p /root/.ssh && \
     chmod 700 /root/.ssh && \
-    echo "$MYKEY" > /root/.ssh/id_rsa && \
+    echo "$DEPLOY_KEY" > /root/.ssh/id_rsa && \
     chmod 600 /root/.ssh/id_rsa && \
     echo "Host github.com\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null" > /root/.ssh/config && \
     chmod 600 /root/.ssh/config
