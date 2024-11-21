@@ -20,5 +20,5 @@ availableSecrets:
 images:
 - 'gcr.io/hpc-data-finder-poc-7930/github.com/nyuhpc/cd-finder:latest'
 
-options:
-  logging: NONE
+#options:
+#  logging: NONE
