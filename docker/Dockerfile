@@ -8,12 +8,13 @@ FROM drupal:10.2.6-php8.3-apache-bullseye
 # RUN composer require 'drupal/paragraphs:^1.17' && \
 #     composer require 'drush/drush:^12.5.2.0'
 
-#ENV MYKEY=$DEPLOY_KEY
+
 ARG DEPLOY_KEY
+ENV MYKEY=$DEPLOY_KEY
 
 RUN mkdir -p /root/.ssh && \
     chmod 700 /root/.ssh && \
-    echo "$DEPLOY_KEY" > /root/.ssh/id_rsa && \
+    echo "$MYKEY" > /root/.ssh/id_rsa && \
     chmod 600 /root/.ssh/id_rsa && \
     echo "Host github.com\n\tStrictHostKeyChecking no\n\tUserKnownHostsFile=/dev/null" > /root/.ssh/config && \
     chmod 600 /root/.ssh/config
