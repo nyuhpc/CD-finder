@@ -3,10 +3,11 @@ steps:
   args: [
     'build',
     '-t', 'gcr.io/hpc-data-finder-poc-7930/github.com/nyuhpc/cd-finder:latest',
-    '--build-arg', 'DEPLOY_KEY=$$DEPLOY_KEY',
+    '--build-arg', 'DEPLOY_KEY="$$DEPLOY_KEY"',
     '-f', 'docker/Dockerfile',
     '.'
   ]
+  secretEnv: ['DEPLOY_KEY']
 
 availableSecrets:
   secretManager:
