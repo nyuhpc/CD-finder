@@ -8,6 +8,7 @@ steps:
       '.'
     ]
     secretEnv: ['DEPLOY_KEY']
+    env: ['DOCKER_BUILDKIT=1']
 
 availableSecrets:
   secretManager:
