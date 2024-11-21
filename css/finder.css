@@ -6,6 +6,12 @@ header {
     display: none !important;
 }
 
+@media screen and (min-width: 38em) {
+    .page-content {
+        margin-top: 0rem;
+    }
+}
+
 .btn-primary {
   background-color: white;
   border-radius: 2px;
@@ -219,9 +225,16 @@ h2.sub-heading.heading-services {
   .email-options label {
     display: inline; }
 
+.checkbox,.radio {
+    position: relative;
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 #questionlist {
   font-size: 1em;
-  padding-left: 2em; }
+  padding-left: 0em; }
   #questionlist li {
     color: #000000;
     font-weight: bold;
@@ -229,7 +242,7 @@ h2.sub-heading.heading-services {
     margin-bottom: 1em;
     margin-left: 2px; }
   #questionlist .question-wrapper {
-    margin: 10px 0; }
+    margin: 2px 0; }
     #questionlist .question-wrapper a {
       font-size: 0.8em; }
       #questionlist .question-wrapper a .fa {
@@ -238,11 +251,11 @@ h2.sub-heading.heading-services {
       display: inline; }
   #questionlist h4 {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 19px;
     line-height: 1.2; }
   #questionlist label {
     font-weight: normal;
-    font-size: 13px;
+    font-size: 18px;
     color: #333;
     z-index: 1; }
   #questionlist input[type="checkbox"] {
@@ -452,6 +465,7 @@ h2.sub-heading.heading-services {
     color: #5a5a5a; }
 
 .cd-row {
+  height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
@@ -476,14 +490,14 @@ h2.sub-heading.heading-services {
 
 .cd-questions {
   position: relative;
-  width: 30%; }
+  width: 35%; }
   @media screen and (max-width: 768px) {
     .cd-questions {
       position: static;
       width: 100%; } }
 
 .cd-services {
-  width: 70%; }
+  width: 65%; }
   @media screen and (max-width: 768px) {
     .cd-services {
       width: 100%; } }
