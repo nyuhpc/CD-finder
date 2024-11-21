@@ -22,3 +22,6 @@ images:
 
 #options:
 #  logging: NONE
+
+options:
+  logging: CLOUD_LOGGING_ONLY
