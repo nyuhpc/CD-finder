@@ -1,15 +1,15 @@
 .step-1 { /* The describe your data text */
-    font-size: 14px;
+    font-size: 19px;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 
 header {
     display: none !important;
 }
 
-@media screen and (min-width: 38em) {
-    .page-content {
-        margin-top: 0rem;
-    }
+.page-content {
+    margin-top: 0rem !important;
 }
 
 .btn-primary {
@@ -110,7 +110,7 @@ footer a {
     padding: 0; } }
 
 .interior-content p, .interior-content ul, .interior-content ol, #comparisonchart th, #comparisonchart td, .cwd-scrolling-table {
-  font-size: 14px; }
+  font-size: 19px; }
 
 #comparisonchart th, #comparisonchart td {
   padding: 12px; }
